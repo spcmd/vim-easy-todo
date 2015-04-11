@@ -1,0 +1,146 @@
+*easy-todo.txt*  Make To-do lists easily
+
+ _   ___         ____                __________  ___  ____ 
+| | / (_)_ _    / __/__ ____ __ __  /_  __/ __ \/ _ \/ __ \
+| |/ / /  ' \  / _// _ `(_-</ // /   / / / /_/ / // / /_/ /
+|___/_/_/_/_/ /___/\_,_/___/\_, /   /_/  \____/____/\____/ 
+                           /___/      
+
+Created by: spcmd
+Website: http://spcmd.github.io
+         https://github.com/spcmd
+         https://gist.github.com/spcmd
+License: GNU GPLv3
+
+===========================================================================
+CONTENTS                                 *easy-todo-contents*
+
+1. Introduction..........................|easy-todo-introduction|
+2. Configuration.........................|easy-todo-configuration|
+ 2.1. Key mapping........................|easy-todo-keymaps|
+ 2.2. Commands...........................|easy-todo-commands|
+3. Usage.................................|easy-todo-usage|
+ 3.1. Create List........................|easy-todo-create-list|
+ 3.2. Create Task........................|easy-todo-create-task|
+4. Customization.........................|easy-todo-customization|
+ 4.1. Status Text........................|easy-todo-status-text|
+ 4.2. Syntax Highlight...................|easy-todo-syntax|
+  4.2.1. List title color................|easy-todo-list-title-color|
+  4.2.2. Status text color...............|easy-todo-status-text-color|
+  4.2.3. Done checkmark color............|easy-todo-done-checkmark-color|
+  4.2.4. Cancelled x mark color..........|easy-todo-cancelled-x-mark-color|
+
+
+===========================================================================
+1. Introduction                                    *easy-todo-introduction*
+
+Vim Easy TODO is a simple & easy to use 'To-do list' plugin
+for - of course - Vim. For those who need only some basic functionality 
+when creating To-do lists.
+
+===========================================================================
+2. Configuration                                  *easy-todo-configuration*
+
+This plugin does not set key mappings by default! There are 3 basic 
+commands you need to map in your .vimrc file:
+
+*easy-todo-keymaps*
+for example:
+
+nmap <leader>d :TodoDone<CR>
+nmap <leader>u :TodoUndone<CR>
+nmap <leader>x :TodoCancel<CR>
+
+*easy-todo-commands*
+The commands are pretty self-explanatory, but for the record:
+
+|TodoDone|       Marks the current task (line) as done
+|TodoUndone|     Sets the current task to default state
+|TodoCancel|     Marks the current task as cancelled
+
+===========================================================================
+3. Usage                                                  *easy-todo-usage*
+
+ 3.1.  Create a new buffer and save it with the extension todo 
+       (e.g. mylist.todo). The automatic syntax highlighting activates 
+       on files only with .todo extension.
+
+       *easy-todo-create-list*
+ 3.2.  Set the list title by enclosing it with brackets. 
+       For example:
+
+       [My new list]
+
+ 3.3.  *easy-todo-create-task*
+       Below the list title, create your list, starting every 
+       task with a dash (-) and a <space>. Then write your
+       tasks after them. For example:
+
+       [My new list]
+       - This is my first task
+       - This is my second task
+       - This is my third task
+
+ 3.4.  Now you can mark every task (line) as DONE or
+       as CANCELLED (or undone) with your mapped keys.
+       Or you can use the commands (listed above) without
+       key mappings, if you like.
+
+       Note: A status marker gets inserted both for DONE and CANCELLED 
+       states. Do not delete this marker! This is a unicode character (˄), 
+       and it should be working fine. If not, try to set utf-8 in your 
+       .vimrc 
+
+       set encoding=utf-8
+
+       Note: The 'Checkmark' and the 'x mark' (for cancelled) are also 
+       unicode characters and they should be working fine.
+
+===========================================================================
+4. Customization                                   *easy-todo-customization*
+
+You can customize 'Vim Easy TODO' with some basic options.
+
+The following values are the default values. If you want to change them, 
+put the variables into your .vimrc and change their values.
+
+   STATUS TEXT                                      *easy-todo-status-text*
+   Show the task status at the end of the line.
+   It appears when the task is DONE or CANCELLED.
+   It also shows the date and time when the task was marked as DONE or 
+   CANCELLED. If you want to disable it, set the value to false, or leave 
+   it blank (="")
+
+   Note: Setting the value to `false` (or blank) will not delete the 
+   previous status texts from the list! So, if they already exist, you 
+   need to delete them manually, if you want to.
+
+" Show status text
+let g:easy_todo_status_text="true"
+
+   SYNTAX HIGHLIGHT                                      *easy-todo-syntax*
+   You can set the highlight color for the list title,
+   the done mark, the cancelled mark, and the status text.
+   There are variables for both gui and terminal versions.
+
+" List title color                             *easy-todo-list-title-color*
+let g:easy_todo_list_title_color_cterm=215
+let g:easy_todo_list_title_color_gui='#ffaf5f'
+
+" Status text color                           *easy-todo-status-text-color*
+let g:easy_todo_status_text_color_cterm=240
+let g:easy_todo_status_text_color_gui='#585858'
+
+" Done checkmark color                     *easy-todo-done-checkmark-color*
+let g:easy_todo_done_checkmark_color_cterm=46
+let g:easy_todo_done_checkmark_color_gui='#00ff00'
+
+" Cancelled (x) mark color               *easy-todo-cancelled-x-mark-color*
+let g:easy_todo_cancelled_x_mark_color_cterm=9
+let g:easy_todo_cancelled_x_mark_color_gui='#ff0000'
+
+===========================================================================
+
+That's all folks! :)
+
+===========================================================================
