@@ -8,3 +8,4 @@
 " ========================================================= "
 
 au BufWinEnter,BufRead,BufNewFile *.todo set filetype=todo
+au BufWinEnter,BufRead,BufNewFile *.TODO set filetype=todo
