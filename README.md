@@ -1,7 +1,7 @@
 # Vim Easy TODO
 
 Vim Easy TODO is a simple & easy to use 'To-do list' plugin
-for - of course - Vim. 
+for - of course - Vim.
 
 For those who need only some basic functionality when creating To-do lists.
 
@@ -17,7 +17,7 @@ Use [Pathogen](https://github.com/tpope/vim-pathogen) or [Vundle](https://github
 
 ## Configuration
 
-This plugin does **not** set key mappings by default! 
+This plugin does **not** set key mappings by default!
 There are 3 basic commands you need to map in your .vimrc file:
 
 **for example:**
@@ -36,11 +36,11 @@ The commands are pretty self-explanatory, but for the record:
 
 1. Create a new buffer and save it with the extension `todo` (e.g. _mylist.todo_). The automatic syntax highlighting activates on files only with `.todo` extension.
 2. Set the list title by enclosing it with brackets. For example:<br>
-   
+
     `[My new list]`
 
 3. Below the list title, create your list, starting every task with a dash (`-`) and a `<space>`. Then write your tasks after them. For example:<br>
-    
+
     `[My new list]`<br>
     `- This is my first task`<br>
     `- This is my second task`<br>
@@ -50,7 +50,7 @@ The commands are pretty self-explanatory, but for the record:
 
 **Note**: A status marker gets inserted both for **DONE** and **CANCELLED** states _(see screenshot above!)_. **Do not delete this marker!** This is a unicode character (`˄`), and it should be working fine. If not, try to set utf-8 in your .vimrc `set encoding=utf-8`
 
-**Note2**: The _Checkmark_ and the _x mark _(for cancelled) are also unicode characters and they should be working fine _(see screenshot above!)_. 
+**Note2**: The _Checkmark_ and the _x mark _(for cancelled) are also unicode characters and they should be working fine _(see screenshot above!)_.
 
 
 ## Customization
@@ -98,3 +98,10 @@ You can read the help file in Vim with the usual help command:
 ## License
 
 GNU GPLv3
+
+### Donation
+
+Humbly accepting your kind donation
+
+[![paypal donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HCPYH3LWZZR9Y
+)
